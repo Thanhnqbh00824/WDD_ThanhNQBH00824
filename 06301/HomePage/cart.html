@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+  <div class="cart-container">
+    <h1>Shopping Cart</h1>
+    <div class="cart-items">
+      <!-- Items will be dynamically added here -->
+    </div>
+    <div class="total-price">
+      <p>Total: 0₫</p> <!-- Initial total price -->
+    </div>
+    <div class="buttons">
+      <button onclick="window.history.back()">Back</button>
+      <button class="buy-now">Buy now</button> <!-- Buy now button -->
+    </div>
+  </div>
+
+  <script src="cart.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      let cartContainer = document.querySelector('.cart-items');
+      let totalPriceElement = document.querySelector('.total-price p');
+      let totalPrice = 0;
+
+      // Populate cart items
+      cart.forEach(function(item, index) {
+        let cartItemDiv = document.createElement('div');
+        cartItemDiv.classList.add('cart-item');
+        cartItemDiv.innerHTML = `
+          <p>${item.name}</p>
+          <p>${item.price.toLocaleString()}₫</p>
+          <button class="remove-item" data-index="${index}">Remove</button>
+        `;
+        cartContainer.appendChild(cartItemDiv);
+        totalPrice += item.price;
+      });
+
+      // Display total price
+      totalPriceElement.textContent = `Total: ${totalPrice.toLocaleString()}₫`;
+
+      // Handle empty cart
+      if (cart.length === 0) {
+        cartContainer.innerHTML = '<p>Your cart is empty!</p>';
+        totalPriceElement.textContent = 'Total: 0₫';
+      }
+
+      // Remove item functionality
+      document.querySelectorAll('.remove-item').forEach(button => {
+        button.addEventListener('click', function() {
+          const itemIndex = parseInt(this.dataset.index, 10);
+          cart.splice(itemIndex, 1);
+          localStorage.setItem('cart', JSON.stringify(cart));
+          location.reload();
+        });
+      });
+
+      // Buy now functionality
+      document.querySelector('.buy-now').addEventListener('click', function() {
+        if (cart.length === 0) {
+          alert('Your cart is empty!');
+          return;
+        }
+        alert('Order has been placed successfully!');
+        cart = [];
+        localStorage.setItem('cart', JSON.stringify(cart));
+        location.reload(); // Reload the page to clear the cart
+      });
+    });
+  </script>
+</body>
+</html>

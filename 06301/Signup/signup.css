@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #87CEEB; /* Màu skyblue */
+}
+
+.signup-container {
+    background-color: rgba(135, 206, 235, 0.9); /* Màu skyblue nhạt hơn */
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.signup-container h2 {
+    color: black;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.signup-container p {
+    color: black;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.signup-container form input[type="text"],
+.signup-container form input[type="email"],
+.signup-container form input[type="phone numble"],
+.signup-container form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 20px;
+    background-color: #e0f7fa; /* Màu xanh nhạt */
+    font-size: 16px;
+}
+
+.signup-container form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.signup-container form button[type="submit"],
+.signup-container .login,
+.signup-container .back-home {
+    background-color: #e0f7fa; /* Màu xanh nhạt giống các trường nhập liệu */
+    color: #333;
+}
+
+/* Hiệu ứng hover màu xanh lá cây */
+.signup-container form button:hover,
+.signup-container .google:hover,
+.signup-container .login:hover,
+.signup-container .back-home:hover {
+    background-color: #4CAF50; /* Màu xanh lá cây */
+}
+
+.signup-container .social-login {
+    display: flex;
+    justify-content: center;
+}
+
+.signup-container .google {
+    background-color: #db4437;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}

@@ -1,0 +1,140 @@
+header {
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* product section */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+}
+
+.product-section {
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.product-section h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    position: relative;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.product-name {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.product-price {
+    font-size: 18px;
+    color: #007f00;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.right-nav a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--main-light-color);
+    position: relative;
+}
+.right-nav a i {
+    color: #4b4b4b;
+}
+.right-nav a span {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #ffffff;
+    background-color: var(--main-color);
+    font-weight: 500;
+    font-size: 0.6rem;
+}
+
+/* buy button */
+.buy-now {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: yellow;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.buy-now:hover {
+    background-color: greenyellow;
+}
+
+/* cart button */
+.cart-now {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: skyblue;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.cart-now:hover {
+    background-color: greenyellow;
+}
